@@ -1,0 +1,14 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: alex-operators
+  namespace: olm
+spec:
+  image: unreachable-bundle-upgrade # or quay.io/agreene/index:reachable-bundle-upgrade
+  displayName: Alex Operators
+  priority: -100
+  publisher: Alex
+  sourceType: grpc
+  updateStrategy:
+    registryPoll:
+      interval: 10m0s

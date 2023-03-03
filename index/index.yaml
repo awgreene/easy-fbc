@@ -1,0 +1,107 @@
+defaultChannel: unavailable-image-upgrade
+name: quay
+schema: olm.package
+---
+entries:
+  - name: quay-operator.v3.8.3
+  - name: quay-operator.v3.8.4
+    replaces: quay-operator.v3.8.3
+name: unavailable-image-upgrade
+package: quay
+schema: olm.channel
+---
+entries:
+  - name: quay-operator.v3.8.3
+  - name: quay-operator.v3.8.5
+    replaces: quay-operator.v3.8.3
+name: working-upgrade
+package: quay
+schema: olm.channel
+---
+entries:
+  - name: quay-operator.v3.8.3
+  - name: quay-operator.v3.8.6
+    replaces: quay-operator.v3.8.3
+name: broken-crd
+package: quay
+schema: olm.channel
+---
+image: quay.io/operatorhubio/project-quay@sha256:bef60a849fa51958b3f6d492157791fca4647e89b528cfc59655ad54ce1785c7
+name: quay-operator.v3.8.3
+package: quay
+properties:
+  - type: olm.gvk
+    value:
+      group: redhatcop.redhat.io
+      kind: QuayEcosystem
+      version: v1alpha1
+  - type: olm.gvk
+    value:
+      group: quay.redhat.com
+      kind: QuayRegistry
+      version: v1
+  - type: olm.package
+    value:
+      packageName: quay
+      version: 3.8.3
+schema: olm.bundle
+---
+image: registry.stage.redhat.io/rh-sso-7/sso7-rhel8-operator-bundle@sha256:92604a0b429d49196624dce12924e37fdd767a98eaca3175363358bea39f1d84
+name: quay-operator.v3.8.4
+package: quay
+properties:
+  - type: olm.gvk
+    value:
+      group: redhatcop.redhat.io
+      kind: QuayEcosystem
+      version: v1alpha1
+  - type: olm.gvk
+    value:
+      group: quay.redhat.com
+      kind: QuayRegistry
+      version: v1
+  - type: olm.package
+    value:
+      packageName: quay
+      version: 3.8.4
+schema: olm.bundle
+---
+image: quay.io/agreene/quay-bundle:v3.8.5@sha256:6d7639f8e7fa6eb9ef6050179a8758d8911ef9a8835679c56b89736ae621e746
+name: quay-operator.v3.8.5
+package: quay
+properties:
+  - type: olm.gvk
+    value:
+      group: redhatcop.redhat.io
+      kind: QuayEcosystem
+      version: v1alpha1
+  - type: olm.gvk
+    value:
+      group: quay.redhat.com
+      kind: QuayRegistry
+      version: v1
+  - type: olm.package
+    value:
+      packageName: quay
+      version: 3.8.5
+schema: olm.bundle
+---
+image: quay.io/agreene/bundle:invalid-crd@sha256:495db49bb400f44913b27875a5dca2cc5eff579fd311b5b52a1fb8ff7ce41fe5
+name: quay-operator.v3.8.6
+package: quay
+properties:
+  - type: olm.gvk
+    value:
+      group: redhatcop.redhat.io
+      kind: QuayEcosystem
+      version: v1alpha1
+  - type: olm.gvk
+    value:
+      group: quay.redhat.com
+      kind: QuayRegistry
+      version: v1
+  - type: olm.package
+    value:
+      packageName: quay
+      version: 3.8.6
+schema: olm.bundle
